@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan Sendhav - About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a14;
+            --card-bg-color: #1a1a2e;
+            --primary-color: #7d40e3;
+            --primary-light: #9a65f7;
+            --accent-color: #00d4ff;
+            --text-color-light: #f0f0f0;
+            --text-color-faded: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
+            --gradient: linear-gradient(135deg, #7d40e3 0%, #00d4ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(10, 10, 20, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px 0;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--primary-light);
+        }
+
+        /* Main Container */
+        .about-container {
+            flex-grow: 1;
+            padding: 80px 8% 50px 8%;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            text-align: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Perfect Grid Layout */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Left Column - Profile */
+        .profile-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Right Column - Details */
+        .details-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--gradient);
+            padding: 3px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--card-bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--primary-light);
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-title {
+            font-size: 16px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .profile-location {
+            font-size: 14px;
+            color: var(--text-color-faded);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .stat-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-color-faded);
+            font-weight: 500;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform var(--transition-speed);
+        }
+
+        .section-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-heading i {
+            font-size: 22px;
+            width: 30px;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary-color);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-color-light);
+            flex-grow: 1;
+        }
+
+        .item-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-light);
+            background: rgba(125, 64, 227, 0.1);
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            color: var(--text-color-faded);
+            margin-bottom: 8px;
+        }
+
+        .item-score {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-color);
+            background: rgba(0, 212, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .language-item {
+            background: var(--gradient);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .language-item:hover::before {
+            left: 100%;
+        }
+
+        .language-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(125, 64, 227, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            padding: 30px 8%;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-speed);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(125, 64, 227, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-link {
+                margin: 0 12px;
+                font-size: 15px;
+            }
+
+            .about-container {
+                padding: 60px 5% 30px 5%;
+            }
+            
+            .page-title {
+                font-size: 42px;
+                margin-bottom: 40px;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .profile-card {
+                padding: 30px;
+            }
+            
+            .section-card {
+                padding: 25px;
+            }
+
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">AS</div>
+        <nav>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+            <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+            <a href="{{ url_for('skills') }}" class="nav-link">Skills</a>
+            <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="about-container">
+        <h1 class="page-title">About Me</h1>
+        
+        <div class="about-grid">
+            <!-- Left Column -->
+            <div class="profile-column">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <div class="profile-image-inner">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    
+                    <h2 class="profile-name">Abhinandan Sendhav</h2>
+                    <p class="profile-title">AI/ML Developer & Data Scientist</p>
+                    
+                    <div class="profile-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Indore, Madhya Pradesh, India</span>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Learning</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Card -->
+                <div class="section-card">
+                    <h2 class="card-heading">
+                        <i class="fas fa-language"></i>
+                        Languages
+                    </h2>
+                    <div class="languages-grid">
+                        <div class="language-item">Hindi (Native)</div>
+                        <div class="language-item">English (Professional)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="details-column">
+                <!-- Summary Card -->
+                <div class="section-card">
+                    <h2 class="card-heading">
+                        <i class="fas fa-user"></i>
+                        Professional Summary
+                    </h2>
+                    <p class="summary-text">
+                        Passionate <span class="highlight">B.Sc. Computer Science</span> student with hands-on expertise in 
+                        <span class="highlight">Machine Learning</span>, <span class="highlight">Deep Learning</span>, and 
+                        end-to-end AI deployment. Built real-world projects like an 
+                        <span class="highlight">Email Spam Detector (92% accuracy)</span> and 
+                        <span class="highlight">Kaggle Dataset Recommender</span>, leveraging Python, Streamlit, and Flask. 
+                        Strong foundation in data preprocessing, model training, and web app deployment. 
+                        Eager to apply my skills in a dynamic internship role to solve business problems with 
+                        data-driven solutions.
+                    </p>
+                </div>
+                
+                <!-- Education Card -->
+                <div class="section-card">
+                    <h2 class="card-heading">
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div class="item-title">B.Sc. in Computer Science</div>
+                                <div class="item-date">2024 – Present</div>
+                            </div>
+                            <div class="item-subtitle">Govt. Nirbhay Singh Patel Science College, Indore</div>
+                            <div class="item-score">Focus: AI & Machine Learning</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div class="item-title">12th Grade (PCM)</div>
+                                <div class="item-date">2023 – 2024</div>
+                            </div>
+                            <div class="item-subtitle">Saraswati Vidya Mandir, Vijay Nagar, Dewas</div>
+                            <div class="item-score">74% Aggregate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="copyright">
+            © 2025 Abhinandan Sendhav. Built with ❤️ & AI
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/abhinandan45" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abhinandan-sendhav-540206342/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:abhinandansendhav540@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.section-card, .profile-card');
+            cards.forEach(card => {
+                const position = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (position < screenPosition) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize animations
+        document.querySelectorAll('.section-card, .profile-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Trigger animation
+        setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+        }, 100);
+    </script>
+</body>
+</html>
