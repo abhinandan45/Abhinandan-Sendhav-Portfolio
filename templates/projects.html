@@ -481,8 +481,61 @@
         <p class="page-subtitle">Real-world AI/ML applications showcasing cutting-edge solutions and practical implementations</p>
         
         <div class="projects-grid">
-            <!-- RAG Chatbot -->
+            <!-- AI Document Summarizer -->
             <div class="project-card rag-chatbot-card">
+                <div>
+                    <h2 class="project-title">
+                        <i class="fas fa-file-alt"></i>
+                        AI Document Summarizer
+                    </h2>
+                    <p class="project-description">
+                        End-to-end NLP project that automatically extracts and summarizes long text or PDF files into concise, 
+                        meaningful summaries using Transformer-based architecture (BART). Perfect for research papers, reports, 
+                        and professional documents with adjustable summary length options.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag tag-genai">NLP</span>
+                        <span class="project-tag">Transformer Models</span>
+                        <span class="project-tag">PDF Processing</span>
+                    </div>
+
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Time Saved: <span class="metric-value">80%+</span></span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>PDF Support: <span class="metric-value">Yes</span></span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>Length Control: <span class="metric-value">3 Options</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python 3.11</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">BART-large-cnn</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">PyMuPDF</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/abhinandan45/AI-Text-summarizer" target="_blank" class="action-btn code-btn">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session-Based RAG Chatbot -->
+            <div class="project-card">
                 <div>
                     <h2 class="project-title">
                         <i class="fas fa-robot"></i>
@@ -496,7 +549,7 @@
                     
                     <div class="project-tags">
                         <span class="project-tag tag-genai">Generative AI</span>
-                        <span class="project-tag tag-highlight">Full Deployment</span>
+                        <span class="project-tag">RAG Architecture</span>
                         <span class="project-tag">Session Management</span>
                     </div>
 
@@ -529,9 +582,6 @@
                     <div class="project-actions">
                         <a href="https://github.com/abhinandan45/session-rag-chatbot" target="_blank" class="action-btn code-btn">
                             <i class="fab fa-github"></i> Source Code
-                        </a>
-                        <a href="https://session-rag-chatbot-abfzierjp6wvgjvaeynmft.streamlit.app/" target="_blank" class="action-btn demo-btn">
-                            <i class="fas fa-rocket"></i> Live Demo
                         </a>
                     </div>
                 </div>
@@ -579,42 +629,6 @@
 
                     <div class="project-actions">
                         <a href="https://github.com/abhinandan45/Farm-Mitra" target="_blank" class="action-btn code-btn">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Chatbot -->
-            <div class="project-card">
-                <div>
-                    <h2 class="project-title">
-                        <i class="fas fa-comments"></i>
-                        AI Conversational Chatbot
-                    </h2>
-                    <p class="project-description">
-                        Advanced conversational AI chatbot fine-tuned on custom datasets using Hugging Face Transformers. 
-                        Generates context-aware, human-like responses for natural and engaging conversations.
-                    </p>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">Transformers</span>
-                        <span class="project-tag">Fine-Tuning</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Sentence Transformers</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Hugging Face</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://github.com/abhinandan45/conversational-chatbot" target="_blank" class="action-btn code-btn">
                             <i class="fab fa-github"></i> Source Code
                         </a>
                     </div>
@@ -706,6 +720,42 @@
                         </a>
                         <a href="https://dataset-recomandation.onrender.com" target="_blank" class="action-btn demo-btn">
                             <i class="fas fa-rocket"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Conversational Chatbot -->
+            <div class="project-card">
+                <div>
+                    <h2 class="project-title">
+                        <i class="fas fa-comments"></i>
+                        AI Conversational Chatbot
+                    </h2>
+                    <p class="project-description">
+                        Advanced conversational AI chatbot fine-tuned on custom datasets using Hugging Face Transformers. 
+                        Generates context-aware, human-like responses for natural and engaging conversations.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">Transformers</span>
+                        <span class="project-tag">Fine-Tuning</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Sentence Transformers</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Hugging Face</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/abhinandan45/conversational-chatbot" target="_blank" class="action-btn code-btn">
+                            <i class="fab fa-github"></i> Source Code
                         </a>
                     </div>
                 </div>
